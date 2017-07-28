@@ -32,7 +32,7 @@ SECRET_KEY = '3h#@)s(cdo%7muqn^bv2)m@xvmt*ss2*$jvebob@rq4z1dz1&p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -155,4 +155,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'db_2_test/media/')
 
 
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+from decouple import config
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

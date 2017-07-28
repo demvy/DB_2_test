@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block title %}
+  <title>Register | Login</title>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <h4>Log In</h4>
+  <div class="col m4">
+
+    <form class="" action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% for field in form %}
+      <div class="form-group ">
+        {{ field.label_tag}} {{ field }}
+        {% if field.errors %}
+        <div>{{ field.errors }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+      <input type="submit" class="btn btn-primary" value="Login">
+    </form>
+  </div>
+</div>
+    <p><a href="{% url 'user:register' %}">Or Register</a></p>
+{% endblock %}

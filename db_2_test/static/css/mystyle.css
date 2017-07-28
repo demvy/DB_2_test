@@ -1,0 +1,17 @@
+
+.search{
+    width: 100px;
+    height: 30px;
+    color: #000000;
+}
+
+#searchbox{
+    color: #000000;
+	text-align: right;
+	cursor: pointer;
+	width: 400px;
+    height: 30px;
+	letter-spacing: 4px;
+	text-shadow: 0 0 2px grey;
+	word-spacing: 20px;
+}

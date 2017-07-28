@@ -157,7 +157,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'db_2_test/media/')
 import dj_database_url
 from decouple import config
 
-SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(

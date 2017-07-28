@@ -30,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3h#@)s(cdo%7muqn^bv2)m@xvmt*ss2*$jvebob@rq4z1dz1&p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -155,5 +155,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'db_2_test/media/')
 
 
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] =  dj_database_url.config()

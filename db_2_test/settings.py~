@@ -32,7 +32,7 @@ SECRET_KEY = '3h#@)s(cdo%7muqn^bv2)m@xvmt*ss2*$jvebob@rq4z1dz1&p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -154,9 +154,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'db_2_test/media/')
 
 
-env = os.environ.copy()
-db_url = env.get('DATABASE_URL', False)
-
-if db_url != False:
-    import dj_database_url
-    DATABASES['default'] =  dj_database_url.config()
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()

@@ -57,7 +57,7 @@
                 <p>{{ post.body|truncatewords:20 }}</p>
                 <p>Date of publication: {{ post.publication_date }}</p>
                 <p>Likes: {{ post.likes.count }}
-                    <a href="/net/post/{{ post.id }}/addlike"><img src="{% static 'img/Fb_fan_15_like.png' %}" style="width: 20px; height: 100%"></a>
+                    <a href="/net/post/{{ post.id }}/addlike"><img src="{% static 'Fb_fan_15_like.png' %}" style="width: 20px; height: 100%"></a>
                 </p>
             </div>
         </div>
